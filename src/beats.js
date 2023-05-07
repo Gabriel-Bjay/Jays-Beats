@@ -1,5 +1,5 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize";
-const redirectUri = "https://localhost:3000/";
+const redirectUri = "https://beats-by-jay.web.app";
 const clientId = "201ba3c7dcbe4aef8046a37419940230";
 
 const scopes = [

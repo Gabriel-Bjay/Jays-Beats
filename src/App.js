@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import './App.css';
-import Login from './Login';
+import React, { useEffect } from "react";
+import Login from "./Login";
+import "./App.css";
 import { getTokenFromUrl } from "./beats";
 import SpotifyWebApi from "spotify-web-api-js";
 import Player from "./Player";
@@ -34,20 +34,21 @@ function App() {
           playlists,
         });
       });
-      beats.getPlaylist("37i9dQZF1E34Ucml4HHx1w").then((playlist) => {
+      beats.getPlaylist("201ba3c7dcbe4aef8046a37419940230").then((playlist) => {
         dispatch({
           type: "SET_DISCOVER_WEEKLY",
           discover_weekly: playlist,
         });
       });
     }
-  }, []);
+  }, [token, dispatch]);
 
   return (
     <div className="App">
-     {token ? <h1>Logged in</h1> : <Login />}
+      {token ? <Player beats={beats} /> : <Login />}
     </div>
   );
 }
 
 export default App;
+
