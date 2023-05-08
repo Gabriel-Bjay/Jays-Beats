@@ -11,7 +11,7 @@ function Player({ beats, user }) {
   return (
     <div className="player">
       <div className="player__body">
-      <h1>Welcome, {user.display_name}!</h1>
+      <h1>Welcome</h1>
         <Sidebar />
         <Body beats={beats} />
       </div>
